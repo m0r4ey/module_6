@@ -8,7 +8,7 @@ class Vehicle:
         self.__engine_power = engine_power
         self.__color = color
 
-    __COLOR_VARIANTS = ['blue', 'green', 'white']
+    __COLOR_VARIANTS = ['blue', 'green', 'white', 'yellow']
 
     def get_model(self):
         print(f'Модель: {self.__model}')
@@ -26,6 +26,7 @@ class Vehicle:
         print(f'Владелец: {self.owner}')
 
     def set_color(self, new_color):
+        new_color = new_color.lower()
         if any(new_color in _ for _ in self.__COLOR_VARIANTS):
             self.__color = new_color
         else:
@@ -44,7 +45,7 @@ vehicle1.print_info()
 
 # Меняем свойства (в т.ч. вызывая методы)
 vehicle1.set_color('Pink')
-vehicle1.set_color('BLACK')
+vehicle1.set_color('yeLLow')
 vehicle1.owner = 'Vasyok'
 
 # Проверяем что поменялось
